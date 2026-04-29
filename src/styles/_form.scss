@@ -1,0 +1,74 @@
+.lead-form {
+  width: min(100%, 620px);
+  padding: clamp(18px, 2.5vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.lead-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.lead-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.lead-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.lead-form__field span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lead-form__field input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  outline: none;
+  padding: 0 18px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lead-form__field input::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.lead-form__field input:focus {
+  border-color: rgba(247, 184, 21, 0.8);
+}
+
+.lead-form__button {
+  width: 100%;
+  height: 56px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 999px;
+  color: #111111;
+  background: #ffffff;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.lead-form__button:hover {
+  transform: translateY(-2px);
+  background: var(--color-yellow);
+}
+
+@media (max-width: 680px) {
+  .lead-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

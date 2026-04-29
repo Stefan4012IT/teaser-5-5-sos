@@ -1,0 +1,80 @@
+.circular-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circular-menu__circle {
+  position: absolute;
+  top: 28px;
+  right: clamp(20px, 4vw, 56px);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #101010;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.circular-menu__content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: clamp(96px, 14vh, 150px) clamp(28px, 8vw, 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(18px, 3vw, 34px);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.35s ease 0s,
+    transform 0.35s ease 0s;
+}
+
+.circular-menu__content a {
+  font-size: clamp(38px, 7vw, 104px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  color: #ffffff;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.circular-menu__content a:hover {
+  color: var(--color-yellow);
+  transform: translateX(12px);
+}
+
+.circular-menu.is-open {
+  pointer-events: auto;
+}
+
+.circular-menu.is-open .circular-menu__circle {
+  transform: scale(80);
+}
+
+.circular-menu.is-open .circular-menu__content {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.45s ease 0.38s,
+    transform 0.45s ease 0.38s;
+}
+
+@media (max-width: 720px) {
+  .circular-menu__content {
+    padding-inline: 24px;
+  }
+
+  .circular-menu__content a {
+    font-size: clamp(34px, 13vw, 68px);
+  }
+}

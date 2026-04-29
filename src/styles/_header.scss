@@ -1,0 +1,79 @@
+.site-header {
+  width: 100%;
+  height: var(--header-height);
+  padding: 24px clamp(20px, 4vw, 56px);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.site-header__logo-mark {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.site-header__logo-text {
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+.site-header__menu-button {
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  display: grid;
+  place-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.site-header__menu-button span {
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.site-header__menu-button span:first-child {
+  transform: translateY(-4px);
+}
+
+.site-header__menu-button span:last-child {
+  transform: translateY(4px);
+}
+
+.site-header__menu-button {
+  z-index: 40;
+}
+
+.site-header__menu-button.is-active span:first-child {
+  transform: rotate(45deg);
+}
+
+.site-header__menu-button.is-active span:last-child {
+  transform: rotate(-45deg);
+}
+
+.site-header__menu-button.is-active {
+  background: rgba(255, 255, 255, 0.18);
+}
