@@ -1,6 +1,6 @@
 .lead-form {
-  width: min(100%, 620px);
-  padding: clamp(18px, 2.5vw, 28px);
+  width: min(100%, 1280px);
+  padding: clamp(18px, 2.2vw, 28px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.1);
@@ -8,25 +8,33 @@
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
-.lead-form__grid {
+.lead-form__title {
+  max-width: 100%;
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(22px, 2.4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.lead-form__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.25fr) minmax(180px, 1fr) 180px;
   gap: 14px;
+  align-items: end;
 }
 
 .lead-form__field {
   display: grid;
   gap: 8px;
-}
-
-.lead-form__field--full {
-  grid-column: 1 / -1;
+  min-width: 0;
 }
 
 .lead-form__field span {
   color: rgba(255, 255, 255, 0.76);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
+  padding-left: 20px;
 }
 
 .lead-form__field input {
@@ -50,8 +58,7 @@
 
 .lead-form__button {
   width: 100%;
-  height: 56px;
-  margin-top: 18px;
+  height: 52px;
   border: 0;
   border-radius: 999px;
   color: #111111;
@@ -67,8 +74,149 @@
   background: var(--color-yellow);
 }
 
-@media (max-width: 680px) {
-  .lead-form__grid {
+.lead-form__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+.lead-form__message {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.lead-form__message--success {
+  color: #b9f7c7;
+}
+
+.lead-form__message--error {
+  color: #ffb7b7;
+}
+
+.lead-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 980px) {
+  .lead-form {
+    width: min(100%, 720px);
+  }
+
+  .lead-form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lead-form__button {
+    grid-column: 1 / -1;
+  }
+  .lead-form__field span {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .lead-form__row {
     grid-template-columns: 1fr;
+  }
+
+  .lead-form__title {
+    font-size: 22px;
+  }
+}
+
+.success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.success-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(12px);
+}
+
+.success-modal__card {
+  width: min(100%, 460px);
+  position: relative;
+  z-index: 1;
+  padding: clamp(28px, 5vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 32px;
+  background: rgba(16, 16, 16, 0.92);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  animation: modalIn 0.35s ease both;
+}
+
+.success-modal__close {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.success-modal__eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-yellow);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.success-modal__title {
+  margin: 0;
+  font-size: clamp(36px, 7vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.success-modal__text {
+  margin: 18px auto 28px;
+  max-width: 340px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.success-modal__button {
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  color: #111111;
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.success-modal__button:hover {
+  background: var(--color-yellow);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

@@ -8,7 +8,7 @@
 }
 
 .hero__content {
-  width: min(100%, 720px);
+  width: min(100%, 1100px);
   z-index: 30;
 }
 
@@ -35,4 +35,9 @@
   color: rgba(255, 255, 255, 0.78);
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.45;
+
+  .boldeto {
+    font-weight: 700;
+    color: var(--color-yellow);
+  }
 }

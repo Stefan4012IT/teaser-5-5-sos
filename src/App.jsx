@@ -37,11 +37,11 @@ function App() {
           <p className="hero__eyebrow">5.5. / Savremena</p>
 
           <h1 className="hero__title">
-            5.5. je vas dan odluke za čistu peticu!
+            5.5.&nbsp; je vaš dan odluke za čistu peticu!
           </h1>
 
           <p className="hero__text">
-            Ukoliko želite svom detetu da obezbedite najsvaremenenije obrazovanje ovo je pravi trenutak, imamo za vas iznenadjenje za 5+. Popunite polja, a mi ćemo vas 5.5. obavestiti o čemu je reč.
+            Ukoliko želite svom detetu da obezbedite najsvaremenenije obrazovanje ovo je pravi trenutak, <span className='boldeto'>imamo za vas iznenadjenje za 5+.</span>
           </p>
 
           <LeadForm />
