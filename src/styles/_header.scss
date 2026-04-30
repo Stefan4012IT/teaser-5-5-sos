@@ -23,6 +23,12 @@
   height: 44px;
 }
 
+@media (max-width: 980px) {
+  .site-header__logo {
+    height: 30px;
+  }
+}
+
 .site-header__logo-mark {
   width: 44px;
   height: 44px;
