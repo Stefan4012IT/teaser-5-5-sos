@@ -3,7 +3,7 @@ import Header from './components/Header'
 import CircularMenu from './components/CircularMenu'
 import LeadForm from './components/LeadForm'
 
-import imgDesk from './assets/images/5-5-savremena_osnovna_hero-desk.jpg'
+import imgDesk from './assets/images/5-5-savremena_osnovna_hero-desk.webp'
 import imgMobile from './assets/images/5-5-savremena_osnovna_hero-mob-img.png'
 
 function App() {
