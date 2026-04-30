@@ -37,7 +37,7 @@ function App() {
           <p className="hero__eyebrow">5.5. / Poklon za 5+</p>
 
           <h1 className="hero__title">
-            5.5.&nbsp; je vaš dan odluke za čistu peticu!
+            5.&nbsp;5.&nbsp; je vaš dan odluke za čistu peticu!
           </h1>
           <img
             className="hero__mobile-image"
